@@ -1,12 +1,14 @@
-function Converter() {
-  var valorElemento = document.getElementById("valor");
-  var valor = valorElemento.value;
-  var valorDolarNumerico = parseFloat(valor);
+var numeroSecreto = parseInt(Math.random() * 11);
 
-  var valorReal = valorDolarNumerico * 5;
-  console.log(valorReal);
-
-  var elementoValorConvertido = document.getElementById("valorConvertido");
-  var valorConvertido = "O resultado em real é R$ " + valorReal;
-  elementoValorConvertido.innerHTML = valorConvertido;
+function Chutar() {
+  var elementoResultado = document.getElementById("resultado");
+  var chute = parseInt(document.getElementById("valor").value);
+  console.log(chute);
+  if (chute == numeroSecreto) {
+    elementoResultado.innerHTML = "Você acertou!!";
+  } else if (chute > 10 || chute < 0) {
+    elementoResultado.innerHTML = "Você deve digitar um número de 0 a 10!!";
+  } else {
+    elementoResultado.innerHTML = "Errou!!";
+  }
 }
